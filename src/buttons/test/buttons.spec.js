@@ -324,11 +324,11 @@ describe('buttons', function() {
     });
 
     describe('uibUncheckable', function() {
-      it('should set uncheckable', function() {
+      it('should set disabled', function() {
         $scope.uncheckable = false;
         var btns = compileButtons('<button ng-model="model" uib-btn-radio="1">click1</button><button ng-model="model" uib-btn-radio="2" uib-uncheckable="uncheckable">click2</button>', $scope);
-        expect(btns.eq(0).attr('uncheckable')).toBeUndefined();
-        expect(btns.eq(1).attr('uncheckable')).toBeUndefined();
+        expect(btns.eq(0).attr('disabled')).toBeUndefined();
+        expect(btns.eq(1).attr('disabled')).toBeUndefined();
 
         expect($scope.model).toBeUndefined();
 
@@ -346,8 +346,8 @@ describe('buttons', function() {
 
         $scope.uncheckable = true;
         $scope.$digest();
-        expect(btns.eq(0).attr('uncheckable')).toBeUndefined();
-        expect(btns.eq(1).attr('uncheckable')).toBeDefined();
+        expect(btns.eq(0).attr('disabled')).toBeUndefined();
+        expect(btns.eq(1).attr('disabled')).toBeDefined();
 
         btns.eq(0).click();
         expect($scope.model).toEqual(1);
@@ -356,10 +356,10 @@ describe('buttons', function() {
         expect($scope.model).toEqual(1);
 
         btns.eq(1).click();
-        expect($scope.model).toEqual(2);
+        expect($scope.model).toEqual(1);
 
         btns.eq(1).click();
-        expect($scope.model).toBeNull();
+        expect($scope.model).toEqual(1);
       });
     });
   });

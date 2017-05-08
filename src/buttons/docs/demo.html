@@ -20,13 +20,16 @@
         <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'Right'">Right</label>
     </div>
     <div class="btn-group">
-        <label class="btn btn-success" ng-model="radioModel" uib-btn-radio="'Left'" uncheckable>Left</label>
-        <label class="btn btn-success" ng-model="radioModel" uib-btn-radio="'Middle'" uncheckable>Middle</label>
+        <label class="btn btn-success" ng-model="radioModel" uib-btn-radio="'Left'" uib-uncheckable="uncheckable">Left</label>
+        <label class="btn btn-success" ng-model="radioModel" uib-btn-radio="'Middle'">Middle</label>
         <label class="btn btn-success" ng-model="radioModel" uib-btn-radio="'Right'" uib-uncheckable="uncheckable">Right</label>
     </div>
+    <br/>
     <div>
         <button class="btn btn-default" ng-click="uncheckable = !uncheckable">
             Toggle uncheckable
         </button>
+        &nbsp;
+        uncheckable: {{uncheckable}}
     </div>
 </div>
